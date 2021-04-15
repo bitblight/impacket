@@ -353,12 +353,12 @@ if __name__ == '__main__':
     if options.target is not None:
         logging.info("Running in relay mode to single host")
         mode = 'RELAY'
-        targetSystem = TargetsProcessor(singleTarget=options.target, protocolClients=PROTOCOL_CLIENTS, randomize=options.random)
+        targetSystem = TargetsProcessor(singleTarget=options.target, protocolClients=PROTOCOL_CLIENTS) #, randomize=options.random)
     else:
         if options.tf is not None:
             #Targetfile specified
             logging.info("Running in relay mode to hosts in targetfile")
-            targetSystem = TargetsProcessor(targetListFile=options.tf, protocolClients=PROTOCOL_CLIENTS, randomize=options.random)
+            targetSystem = TargetsProcessor(targetListFile=options.tf, protocolClients=PROTOCOL_CLIENTS) #, randomize=options.random)
             mode = 'RELAY'
         else:
             logging.info("Running in reflection mode")
